@@ -1,0 +1,22 @@
+{
+  "name": "jwd2",
+  "version": "1.0.0",
+  "description": "- There will be a landing page with \r     - project Links \r     - contact section and \r     - aboutme section.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start --prefix client",
+    "dev": "npm run dev --prefix client",
+    "studio": "sanity start --prefix studio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwdesjardin/jwd2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwdesjardin/jwd2/issues"
+  },
+  "homepage": "https://github.com/jwdesjardin/jwd2#readme"
+}

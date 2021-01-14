@@ -1,0 +1,323 @@
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flexAlign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexCenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flexWrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.textAlign {
+  text-align: center;
+}
+
+.halfImg {
+  width: 50%;
+}
+
+.grid-2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.contentContainer {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+
+.flexColumn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.textShadow {
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sectionHeaderText {
+  font-size: 4rem;
+  font-stretch: ultra-expanded;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-transform: scaleY(1.6);
+          transform: scaleY(1.6);
+  margin: 2rem 0 7rem;
+  letter-spacing: 1rem;
+  font-weight: 200;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+  -webkit-transition: 150ms linear all;
+  transition: 150ms linear all;
+}
+
+.btn:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: royalblue;
+}
+
+.landingContainer {
+  background-color: aquamarine;
+  padding: 2rem;
+}
+
+.landingContainer .landingHeaderText {
+  font-size: 6rem;
+  line-height: 1;
+  letter-spacing: 0rem;
+  word-spacing: -1rem;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.featuredProjectsContainer {
+  background-color: azure;
+  padding: 2rem 1.5rem;
+}
+
+.featuredProjectsContainer .projectCard {
+  max-width: 27rem;
+  min-height: 32rem;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 2rem;
+  margin: .5rem;
+  -webkit-transition: 150ms linear all;
+  transition: 150ms linear all;
+}
+
+.featuredProjectsContainer .projectCard h3 {
+  font-size: 1.5rem;
+}
+
+.featuredProjectsContainer .projectCard p {
+  margin-bottom: 1rem;
+}
+
+.featuredProjectsContainer .projectCard img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.featuredProjectsContainer .projectCard .tags {
+  list-style: none;
+}
+
+.featuredProjectsContainer .projectCard .tags li {
+  background-color: cadetblue;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  margin: 0 1rem .5rem 0;
+}
+
+.featuredProjectsContainer .projectCard:hover {
+  -webkit-box-shadow: 2px 2px 4px black;
+          box-shadow: 2px 2px 4px black;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.aboutMeContainer {
+  background-color: #c8e1e9;
+  padding: 2rem 1.5rem;
+}
+
+.aboutMeContainer .imgDiv {
+  padding: 1rem;
+}
+
+.aboutMeContainer p {
+  font-size: .9rem;
+  line-height: 1.4rem;
+  margin: 1rem;
+  text-indent: 2rem;
+}
+
+.treehouseContainer {
+  background-color: #e5c8e9;
+  padding: 2rem 1.5rem;
+}
+
+.treehouseContainer .certificateContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.treehouseContainer .certificateContainer a {
+  padding: 1rem;
+  max-width: 25rem;
+  -webkit-transition: 150ms linear all;
+  transition: 150ms linear all;
+}
+
+.treehouseContainer .certificateContainer a:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.treehouseContainer .treehouseProjectsContainer .projectCard {
+  max-width: 20rem;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  -webkit-transition: 150ms linear all;
+  transition: 150ms linear all;
+}
+
+.treehouseContainer .treehouseProjectsContainer .projectCard h3 {
+  font-size: 1.5rem;
+}
+
+.treehouseContainer .treehouseProjectsContainer .projectCard p {
+  margin-bottom: 1rem;
+}
+
+.treehouseContainer .treehouseProjectsContainer .projectCard img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.treehouseContainer .treehouseProjectsContainer .projectCard .tags {
+  list-style: none;
+}
+
+.treehouseContainer .treehouseProjectsContainer .projectCard .tags li {
+  background-color: cadetblue;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  margin: 0 .5rem .5rem 0;
+}
+
+.treehouseContainer .treehouseProjectsContainer .projectCard:hover {
+  -webkit-box-shadow: 2px 2px 4px black;
+          box-shadow: 2px 2px 4px black;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.contactMeContainer {
+  padding: 2rem;
+}
+
+.contactLinks a {
+  margin: 1rem;
+  -webkit-transition: 50ms linear all;
+  transition: 50ms linear all;
+}
+
+.contactLinks a i {
+  color: #000000;
+}
+
+.contactLinks a:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.footerContainer {
+  background-color: aquamarine;
+  padding: 2rem;
+}
+
+@media (max-width: 700px) {
+  .featuredProjectsContainer .projectCard {
+    padding: 1rem;
+    margin: .5rem;
+  }
+  .grid-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .split {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .textAlign {
+    text-align: center;
+    padding: .5rem;
+  }
+  .landingContainer .landingHeaderText {
+    font-size: 3rem;
+    word-spacing: 0rem;
+  }
+  .halfImg {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

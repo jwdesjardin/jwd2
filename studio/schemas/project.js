@@ -4,6 +4,16 @@ export default {
 	type: 'document',
 	fields: [
 		{
+			name: 'featured',
+			title: 'Is this a Featured project?',
+			type: 'boolean'
+		},
+		{
+			name: 'treehouse',
+			title: 'Is this a Treehouse project?',
+			type: 'boolean'
+		},
+		{
 			name: 'title',
 			title: 'Title',
 			type: 'string'

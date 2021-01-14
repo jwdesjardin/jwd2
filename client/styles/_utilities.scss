@@ -1,0 +1,77 @@
+// utilities
+
+
+.flex{
+  display: flex;
+}
+.flexAlign{
+  display: flex;
+  align-items: center;
+  
+}
+.flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.flexWrap{
+  flex-wrap: wrap;
+}
+.textAlign{
+  text-align: center;
+  
+}
+.halfImg{
+  width: 50%;
+}
+
+.grid-2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.contentContainer{
+  margin: 0 auto;
+  max-width: 70rem;
+}
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.textShadow{
+  text-shadow: 5px 5px 10px  rgba($color: #000000, $alpha: .5);
+}
+
+.sectionHeaderText{
+  font-size: 4rem;
+  font-stretch:ultra-expanded;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transform: scaleY(1.6);
+  margin: 2rem 0 7rem;
+  letter-spacing: 1rem;
+  font-weight: 200;
+  
+}
+
+.btn{
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+  transition: 150ms linear all;
+  &:hover {
+    transform: scale(.98);
+  }
+}
+.btn-primary{
+  background-color: royalblue;
+}

@@ -1,0 +1,40 @@
+// media queries 
+
+@media (max-width: 700px) {
+  p{
+
+  }
+
+  .featuredProjectsContainer{
+    .projectCard{
+      padding: 1rem ;
+      margin: .5rem;
+    }
+  }
+
+
+  .grid-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .split{
+    display: flex;
+    flex-direction: column;
+  }
+  .textAlign{
+    text-align: center;
+    padding: .5rem;
+  }
+
+  .landingContainer{
+    .landingHeaderText{
+      font-size: 3rem;
+      word-spacing: 0rem;
+    }
+  }
+  .halfImg{
+    width: 100%;
+  }
+  
+}

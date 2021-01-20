@@ -37,7 +37,7 @@
 
 .contentContainer{
   margin: 0 auto;
-  max-width: 70rem;
+  max-width: 85rem;
 }
 
 .flexColumn{
@@ -51,11 +51,11 @@
 }
 
 .sectionHeaderText{
-  font-size: 4rem;
+  font-size: 3rem;
   font-stretch:ultra-expanded;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transform: scaleY(1.6);
-  margin: 2rem 0 7rem;
+  
+  margin: 1rem 0 3rem;
   letter-spacing: 1rem;
   font-weight: 200;
   
@@ -73,5 +73,7 @@
   }
 }
 .btn-primary{
-  background-color: royalblue;
+
+  border : 2px solid royalblue;
+  background-color: transparent;
 }

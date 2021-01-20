@@ -14,9 +14,9 @@ const TreehouseProjectsHeader = () => {
 			</a>
 
 			<div className='flexColumn flexAlign'>
-				<img src='/images/treehouseSquare.png' alt='' />
+				<img className='treehouseLogo' src='/images/treehouseSquare.png' alt='' />
 				<a href='https://teamtreehouse.com/joeydesjardin' target='_blank'>
-					<button className='btn btn-primary'>View Profile</button>
+					<button className='btn btn-primary'>My Treehouse Profile</button>
 				</a>
 			</div>
 		</div>

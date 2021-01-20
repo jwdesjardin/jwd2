@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap");
+.btn, .btn-primary, .btn-secondary {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+  -webkit-transition: -webkit-transform 50ms linear;
+  transition: -webkit-transform 50ms linear;
+  transition: transform 50ms linear;
+  transition: transform 50ms linear, -webkit-transform 50ms linear;
+}
+
+.btn:hover, .btn-primary:hover, .btn-secondary:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: #5d90dd;
+  color: #ebebeb;
+  border: 1px solid #2967c5;
+}
+
+.btn-secondary {
+  background-color: #e0f7fe;
+  color: #141414;
+  border: 1px solid #97e3fa;
+}
+
+body {
+  font-family: Montserrat;
+  color: #141414;
+}
+
+img {
+  border-radius: 7px;
+}
+
+.headerContainer {
+  font-size: 1.4rem;
+}
+
+.headerContainer .headerContentContainer {
+  margin: 0 auto;
+  max-width: 70rem;
+  padding: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.headerContainer .headerContentContainer .leftFlexItem {
+  margin-right: 2rem;
+}
+
+.headerContainer .headerContentContainer .projectLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.headerContainer .headerContentContainer .projectLinks button {
+  margin: .5rem;
+}
+
+.imgGalleryContainer {
+  padding: 2rem;
+}
+
+.imgGalleryContainer .imgsContainer {
+  margin: 0 auto;
+  max-width: 70rem;
+  overflow-x: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.imgGalleryContainer .imgsContainer img {
+  margin: 0 .5rem;
+}
+
+.projectContainer {
+  padding: 2rem;
+}
+
+.projectContainer .projectDescriptionContainer {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+
+.projectContainer .projectDescriptionContainer .projectSectionContainer {
+  padding: 1rem;
+}
+
+.projectContainer .projectDescriptionContainer .projectSectionContainer .titleDiv {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projectContainer .projectDescriptionContainer .projectSectionContainer .titleDiv .tech_icons {
+  opacity: .8;
+}
+
+.projectContainer .projectDescriptionContainer .projectSectionContainer .titleDiv h2 {
+  font-size: 1.8rem;
+  margin-right: 2rem;
+}
+
+.projectContainer .projectDescriptionContainer .projectSectionContainer .textContentDiv {
+  padding: 1.5rem;
+  line-height: 1.8;
+}
+
+.projectContainer .projectDescriptionContainer .projectSectionContainer .textContentDiv p {
+  text-indent: 2rem;
+}
+
+@media (max-width: 450px) {
+  .titleDiv {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .headerContentContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .projectContainer {
+    padding: .5rem;
+  }
+}
+/*# sourceMappingURL=projects.css.map */

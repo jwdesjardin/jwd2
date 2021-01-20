@@ -54,7 +54,7 @@
 
 .contentContainer {
   margin: 0 auto;
-  max-width: 70rem;
+  max-width: 85rem;
 }
 
 .flexColumn {
@@ -75,12 +75,10 @@
 }
 
 .sectionHeaderText {
-  font-size: 4rem;
+  font-size: 3rem;
   font-stretch: ultra-expanded;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-transform: scaleY(1.6);
-          transform: scaleY(1.6);
-  margin: 2rem 0 7rem;
+  margin: 1rem 0 3rem;
   letter-spacing: 1rem;
   font-weight: 200;
 }
@@ -101,12 +99,33 @@
 }
 
 .btn-primary {
-  background-color: royalblue;
+  border: 2px solid royalblue;
+  background-color: transparent;
 }
 
 .landingContainer {
+  min-height: 100vh;
   background-color: aquamarine;
   padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.landingContainer .headerTextContent {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.landingContainer .headerTextContent p {
+  margin: 1rem 0;
 }
 
 .landingContainer .landingHeaderText {
@@ -118,12 +137,23 @@
 }
 
 .featuredProjectsContainer {
+  min-height: 110vh;
   background-color: azure;
   padding: 2rem 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .featuredProjectsContainer .projectCard {
-  max-width: 27rem;
+  max-width: 25rem;
   min-height: 32rem;
   cursor: pointer;
   border: 2px solid black;
@@ -169,6 +199,17 @@
 }
 
 .aboutMeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 110vh;
   background-color: #c8e1e9;
   padding: 2rem 1.5rem;
 }
@@ -177,14 +218,46 @@
   padding: 1rem;
 }
 
+.aboutMeContainer .imgDiv img {
+  border-radius: 50%;
+  max-width: 20rem;
+}
+
+.aboutMeContainer h2 {
+  margin-bottom: 2rem;
+}
+
 .aboutMeContainer p {
-  font-size: .9rem;
-  line-height: 1.4rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
   margin: 1rem;
   text-indent: 2rem;
+  max-width: 55rem;
+  text-align: center;
+}
+
+.aboutMeContainer .aboutMeText {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.aboutMeContainer .flexColumn {
+  width: 100%;
 }
 
 .treehouseContainer {
+  min-height: 110vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #e5c8e9;
   padding: 2rem 1.5rem;
 }
@@ -203,14 +276,30 @@
 
 .treehouseContainer .certificateContainer a {
   padding: 1rem;
-  max-width: 25rem;
   -webkit-transition: 150ms linear all;
   transition: 150ms linear all;
+}
+
+.treehouseContainer .certificateContainer a img {
+  max-width: 25rem;
 }
 
 .treehouseContainer .certificateContainer a:hover {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
+}
+
+.treehouseContainer .treehouseProjectsContainer .treehouseProjects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .treehouseContainer .treehouseProjectsContainer .projectCard {
@@ -259,6 +348,17 @@
 }
 
 .contactMeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 50vh;
   padding: 2rem;
 }
 
@@ -283,6 +383,11 @@
 }
 
 @media (max-width: 700px) {
+  .aboutMeContainer .aboutMeText p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+  }
   .featuredProjectsContainer .projectCard {
     padding: 1rem;
     margin: .5rem;
@@ -318,6 +423,24 @@
   }
   .halfImg {
     width: 100%;
+  }
+  .treehouseContainer .certificateContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .treehouseContainer .certificateContainer a img {
+    max-width: 15rem;
+  }
+  .treehouseContainer .treehouseLogo {
+    max-width: 6rem;
+  }
+  .treehouseProjects {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 /*# sourceMappingURL=styles.css.map */

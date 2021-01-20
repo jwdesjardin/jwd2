@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run start --prefix client",
+    "build": "npm run build --prefix client",
     "dev": "npm run dev --prefix client",
     "studio": "sanity start --prefix studio"
   },

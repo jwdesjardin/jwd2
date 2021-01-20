@@ -3,24 +3,42 @@
 
 // landing section 
 .landingContainer{
+  min-height: 100vh;
   background-color: aquamarine;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  .headerTextContent{
+    max-width: 50rem;
+    margin: 0 auto;
+    p{
+      margin: 1rem 0;
+    }
+  }
   .landingHeaderText{
     font-size: 6rem;
     line-height: 1;
     letter-spacing: 0rem;
     word-spacing: -1rem;
-    text-shadow: 5px 5px 10px  rgba($color: #000000, $alpha: .5); 
+    text-shadow: 5px 5px 10px  rgba($color: #000000, $alpha: .5);
+    
+    
   }
 }
 
 // featured projects section 
 .featuredProjectsContainer{
+  min-height: 110vh;
   background-color:azure;
   padding: 2rem 1.5rem ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .projectCard{
-    max-width: 27rem;
+    max-width: 25rem;
     min-height: 32rem;
     cursor: pointer;
     border: 2px solid black;
@@ -30,6 +48,7 @@
     transition: 150ms linear all;
     h3{
       font-size: 1.5rem;
+      
     }
     p{
       margin-bottom: 1rem;
@@ -42,8 +61,6 @@
     }
     .tags{
       list-style: none;
-      
-    
       li{
         background-color: cadetblue;
         border-radius: 50px;
@@ -61,22 +78,44 @@
 
 // about me section 
 .aboutMeContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 110vh;
   background-color: rgb(200, 225, 233);
   padding: 2rem 1.5rem;
   .imgDiv{
-padding: 1rem;
+    padding: 1rem;
+    img{
+      border-radius: 50%;
+      max-width: 20rem;
+    }
+  }
+  h2{
+    margin-bottom: 2rem;
   }
   p{
-    font-size: .9rem;
-    line-height: 1.4rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
     margin: 1rem;
     text-indent: 2rem;
-    
+    max-width: 55rem;
+    text-align: center;
+  }
+  .aboutMeText{
+    align-self: center;
+  }
+  .flexColumn{
+    width: 100%;
   }
 }
 // treehouse projects section 
 
 .treehouseContainer{
+  min-height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgb(229, 200, 233);
   padding: 2rem 1.5rem;
   .certificateContainer{
@@ -85,8 +124,11 @@ padding: 1rem;
     align-items: center;
     a{
       padding: 1rem;
-      max-width: 25rem;
+      
       transition: 150ms linear all;
+      img{
+        max-width: 25rem;
+      }
       &:hover{
         transform: scale(.98);
       }
@@ -95,7 +137,11 @@ padding: 1rem;
 
 
   .treehouseProjectsContainer{
-    
+    .treehouseProjects{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     
     .projectCard{
       max-width: 20rem;
@@ -135,6 +181,10 @@ padding: 1rem;
 
 // contact links section 
 .contactMeContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
   padding: 2rem;
 }
 .contactLinks a{

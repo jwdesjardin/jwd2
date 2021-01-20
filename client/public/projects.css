@@ -17,7 +17,7 @@
 
 .btn-primary {
   background-color: #5d90dd;
-  color: #ebebeb;
+  color: #141414;
   border: 1px solid #2967c5;
 }
 
@@ -137,6 +137,7 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    
   }
   .headerContentContainer {
     display: -webkit-box;
@@ -146,6 +147,9 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .headerContainer {
+    font-size: 1.2rem;
   }
   .projectContainer {
     padding: .5rem;

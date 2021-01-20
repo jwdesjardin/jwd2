@@ -69,7 +69,7 @@ export default function Home() {
 				<section className='featuredProjectsContainer'>
 					<div className='contentContainer'>
 						<h2 className='sectionHeaderText'>Featured Projects</h2>
-						<div className='flex flexCenter'>
+						<div className='flex flexCenter smFlexColumn'>
 							{/* display all project cards from projects state */}
 							{featuredProjects.length > 0 &&
 								featuredProjects.map(project => (

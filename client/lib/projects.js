@@ -68,7 +68,7 @@ export async function getAllProjectIds() {
 export async function getProjectData(slug) {
 	try {
 		const project = await sanityClient.fetch(
-			`*[_type == "project" && slug.current == "albumlists"][0]{
+			`*[_type == "project" && slug.current == "${slug}"][0]{
 				title,
 							oneLiner,
 							githubLink,

@@ -2,6 +2,7 @@ import { getAllProjectIds, getProjectData } from '../../lib/projects';
 import { Fragment } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 
 //sets props in Post Component - gets params from fileName
 export async function getStaticProps({ params }) {
@@ -24,27 +25,49 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ project }) {
+	const [ showModal, setShowModal ] = useState(null);
+
+	const openImageModal = e => {
+		console.log(e.currentTarget.value);
+		const imageId = e.currentTarget.value;
+		setShowModal(imageId);
+		console.log('show modal', imageId);
+	};
+
+	const closeModal = e => {
+		console.log(e.target.className);
+		if (!(e.target.className == 'modalImage')) {
+			setShowModal(null);
+		}
+	};
+
 	console.log(project);
 	return (
 		<div className='pageDiv'>
 			<Head>
 				<title>Joey Desjardin Portfolio | {project.title}</title>
+				<link
+					rel='stylesheet'
+					href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'
+					integrity='sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=='
+					crossOrigin='anonymous'
+				/>
 			</Head>
 
 			<nav className='navBar'>
 				<div className='navbarContentContainer'>
 					<h1 className='navTitle'>JWD2</h1>
 					<ul className='navLinks'>
-						<li>
+						<li key='home'>
 							<Link href='/#'>Home</Link>
 						</li>
-						<li>
+						<li key='projects'>
 							<Link href='/#featured-projects'>Projects</Link>
 						</li>
-						<li>
-							<Link href='/resume'>Resume</Link>
+						<li key='resume'>
+							<Link href='/Resume.pdf'>Resume</Link>
 						</li>
-						<li>
+						<li key='contact'>
 							<Link href='/#contact-links'>Contact</Link>
 						</li>
 					</ul>
@@ -86,16 +109,33 @@ export default function Post({ project }) {
 			<div className='imgGalleryContainer'>
 				<div className='imgsContainer'>
 					{project.images.length > 0 &&
-						project.images.map(image => (
-							<img
+						project.images.map((image, index) => (
+							<button
 								key={image.asset._id}
-								src={image.asset.url}
-								height='202.5px'
-								width='360px'
-							/>
+								value={index}
+								onClick={openImageModal}
+								className='imagebutton'
+							>
+								<img src={image.asset.url} height='202.5px' width='360px' />
+							</button>
 						))}
 				</div>
 			</div>
+
+			{showModal && (
+				<div id='imageModal' className='imageModalContainer' onClick={closeModal}>
+					<div className='modalContent'>
+						<img
+							className='modalImage'
+							src={project.images[showModal].asset.url}
+							alt=''
+						/>
+						<div className='modalCloseButton' onClick={closeModal}>
+							<i className='fas fa-window-close fa-2x' />
+						</div>
+					</div>
+				</div>
+			)}
 
 			<div className='projectContainer'>
 				<div className='projectDescriptionContainer'>
@@ -156,7 +196,12 @@ export default function Post({ project }) {
 									{project.sectionIcons2 &&
 										project.sectionIcons2.map(item => {
 											if (item.mainIcon) {
-												return <img src={item.mainIcon.asset.url} />;
+												return (
+													<img
+														src={item.mainIcon.asset.url}
+														key={item.mainIcon.asset._id}
+													/>
+												);
 											}
 										})}
 								</div>
@@ -202,7 +247,12 @@ export default function Post({ project }) {
 									{project.sectionIcons3 &&
 										project.sectionIcons3.map(item => {
 											if (item.mainIcon) {
-												return <img src={item.mainIcon.asset.url} />;
+												return (
+													<img
+														src={item.mainIcon.asset.url}
+														key={item.mainIcon.asset._id}
+													/>
+												);
 											}
 										})}
 								</div>
@@ -248,7 +298,12 @@ export default function Post({ project }) {
 									{project.sectionIcons4 &&
 										project.sectionIcons4.map(item => {
 											if (item.mainIcon) {
-												return <img src={item.mainIcon.asset.url} />;
+												return (
+													<img
+														src={item.mainIcon.asset.url}
+														key={item.mainIcon.asset._id}
+													/>
+												);
 											}
 										})}
 								</div>

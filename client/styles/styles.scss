@@ -27,7 +27,7 @@
     line-height: 1;
     letter-spacing: 0rem;
     word-spacing: -1rem;
-    text-shadow: 3px 3px 6px  rgba($color: $light-color, $alpha: .5);
+    text-shadow: 2px 2px 4px  rgba($color: $light-color, $alpha: .3);
     
     
   }
@@ -149,7 +149,7 @@
 
 
   .treehouseProjectsContainer{
-      margin-top: 2rem;
+      margin: 2rem 0 2rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     
@@ -198,6 +198,7 @@
   justify-content: center;
   min-height: 50vh;
   padding: 2rem;
+  font-size: 1.4rem;
 }
 .contactLinks a{
   margin: 1rem ;

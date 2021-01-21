@@ -1,5 +1,6 @@
 @import 'config';
 
+
 .btn{
   display: inline-block;
   border-radius: 5px;
@@ -51,6 +52,11 @@ img{
   }
   .navTitle{
     margin: 0 1rem; 
+    a{
+      &:hover{
+        text-decoration: none;
+      }
+    }
   }
   .navLinks{
     font-size: .9rem;
@@ -73,6 +79,57 @@ img{
     
   }
 }
+
+
+.imageModalContainer{
+  z-index: 10;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+ 
+  background-color: rgba($color: #000000, $alpha: .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modalContent{
+    display: flex;
+    .modalCloseButton{
+      color: $light-text;
+      margin-left: .5rem;
+      i{
+        transition: 150ms linear all ;
+      &:hover{
+        transform: scale(.9);
+      }
+      }
+      
+    }
+    .modalImage{
+      max-width: 55rem;
+      
+    }
+
+    
+
+  }
+  
+  
+}
+
+@media (max-width: 700px) {
+  .imageModalContainer{
+  .modalContent{
+    .modalImage{
+      max-width: 31rem;
+    }
+  }   
+}
+ }
+
+
+
 
 .headerContainer{
   @include set-background($dark-color);
@@ -118,6 +175,9 @@ img{
     img{
       margin: 0 .2rem;
     }
+    button{
+      border: none;
+    }
   }
 }
 
@@ -141,8 +201,9 @@ img{
       .titleDiv{
         padding: 1rem;
         display: flex;
-        align-items: center;
-        
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: column;
         .tech_icons{
           
           
@@ -153,7 +214,7 @@ img{
         }
         h2{
           font-size: 1.8rem;
-          margin-right: 2rem;
+          
         }
       }
       .textContentDiv{
@@ -224,3 +285,5 @@ flex-direction: column;
 
 
 }
+
+@import 'mobile';

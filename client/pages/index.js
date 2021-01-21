@@ -42,7 +42,9 @@ export default function Home() {
 
 			<nav className='navBar'>
 				<div className='navbarContentContainer'>
-					<h1 className='navTitle'>JWD2</h1>
+					<h1 className='navTitle'>
+						<Link href='/'>JWD2</Link>
+					</h1>
 					<ul className='navLinks'>
 						<li>
 							<Link href='/#'>Home</Link>
@@ -51,7 +53,7 @@ export default function Home() {
 							<Link href='/#featured-projects'>Projects</Link>
 						</li>
 						<li>
-							<Link href='/resume'>Resume</Link>
+							<Link href='/Resume.pdf'>Resume</Link>
 						</li>
 						<li>
 							<Link href='/#contact-links'>Contact</Link>
@@ -136,7 +138,6 @@ export default function Home() {
 				<section className='treehouseContainer'>
 					<div className='contentContainer'>
 						<h2 className='sectionHeaderText'> Treehouse Projects</h2>
-						<TreehouseProjectsHeader />
 
 						<div className='treehouseProjectsContainer'>
 							{treehouseProjects.length > 0 &&
@@ -148,6 +149,7 @@ export default function Home() {
 								))}
 						</div>
 					</div>
+					<TreehouseProjectsHeader />
 				</section>
 
 				{/* contact links section */}

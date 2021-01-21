@@ -1,5 +1,16 @@
 // media queries 
 
+@media (max-width: 1390px) {
+  .featuredProjectsContainer{
+  .projectsContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+}
+
+
+
 @media (max-width: 700px) {
   .aboutMeContainer{
     .aboutMeText{
@@ -36,6 +47,7 @@
   }
 
   .landingContainer{
+    margin-top: 1.5rem;
     .landingHeaderText{
       font-size: 3rem;
       word-spacing: 0rem;
@@ -57,15 +69,19 @@
     .treehouseLogo{
       max-width: 6rem;
     }
-    
+    .treehouseProjectsContainer{
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .treehouseProjects{
     flex-direction: column;
   }
-
-  .smFlexColumn{
+  .featuredProjectsContainer{
+  .projectsContainer{
+    display: flex;
     flex-direction: column;
   }
+}
   
 }

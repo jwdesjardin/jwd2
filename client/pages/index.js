@@ -40,6 +40,26 @@ export default function Home() {
 				/>
 			</Head>
 
+			<nav className='navBar'>
+				<div className='navbarContentContainer'>
+					<h1 className='navTitle'>JWD2</h1>
+					<ul className='navLinks'>
+						<li>
+							<Link href='/#'>Home</Link>
+						</li>
+						<li>
+							<Link href='/#featured-projects'>Projects</Link>
+						</li>
+						<li>
+							<Link href='/resume'>Resume</Link>
+						</li>
+						<li>
+							<Link href='/#contact-links'>Contact</Link>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
 			{/* navbar section  */}
 
 			<main>
@@ -47,18 +67,12 @@ export default function Home() {
 				<section className='landingContainer'>
 					<div className='contentContainer'>
 						<div className='headerTextContent'>
-							<p>
-								<span>Hello, Welcome to my site</span>
-							</p>
 							<h1 className='landingHeaderText'>
-								My Name is <span className='textShadow'>Joey Desjardin</span> and I
-								am a <span className='textShadow'>Web Developer.</span>{' '}
+								My Name is Joey Desjardin. I am a Web Developer.{' '}
 							</h1>
 							<p>
-								I am a fully addicted lifelong learner. This page showcases the
-								projects I have developed in the process of becoming a better
-								developer. I am interested in learning new technologies and meeting
-								new people along the way{' '}
+								I am a curious developer eager to pick up new skills. I am looking
+								for team to contribute to and learn with.
 							</p>
 							<button className='btn btn-primary'>Email Me</button>
 						</div>
@@ -66,10 +80,10 @@ export default function Home() {
 				</section>
 
 				{/* projects section */}
-				<section className='featuredProjectsContainer'>
+				<section id='featured-projects' className='featuredProjectsContainer'>
 					<div className='contentContainer'>
 						<h2 className='sectionHeaderText'>Featured Projects</h2>
-						<div className='flex flexCenter smFlexColumn'>
+						<div className='projectsContainer'>
 							{/* display all project cards from projects state */}
 							{featuredProjects.length > 0 &&
 								featuredProjects.map(project => (
@@ -125,21 +139,19 @@ export default function Home() {
 						<TreehouseProjectsHeader />
 
 						<div className='treehouseProjectsContainer'>
-							<div className='treehouseProjects'>
-								{treehouseProjects.length > 0 &&
-									treehouseProjects.map(project => (
-										<TreehouseProjectCard
-											key={project.slug.current}
-											project={project}
-										/>
-									))}
-							</div>
+							{treehouseProjects.length > 0 &&
+								treehouseProjects.map(project => (
+									<TreehouseProjectCard
+										key={project.slug.current}
+										project={project}
+									/>
+								))}
 						</div>
 					</div>
 				</section>
 
 				{/* contact links section */}
-				<section className='contactMeContainer'>
+				<section id='contact-links' className='contactMeContainer'>
 					<div className='contentContainer flexCenter flexColumn'>
 						<h2>Get In Touch</h2>
 

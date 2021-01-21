@@ -1,0 +1,226 @@
+@import 'config';
+
+.btn{
+  display: inline-block;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 3px;
+  transition: $global-transistion;
+  &:hover {
+    transform: scale(.98);
+  }
+}
+
+.btn-primary {
+  @extend .btn;
+  @include set-background(lighten($primary-color, 15%));
+  border: 1px solid $primary-color;
+}
+.btn-secondary{
+  @extend .btn;
+  @include set-background(lighten($secondary-color, 15%));
+  border: 1px solid $secondary-color;
+}
+body{
+  font-family: Montserrat;
+  color: $dark-text;
+  @include set-background($light-color);
+}
+
+img{
+  border-radius: 7px;
+}
+
+.pageDiv{
+  padding-top:2.5rem ;
+}
+
+.navBar{
+  @include set-background($dark-color);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  .navbarContentContainer{
+    margin: 0 auto;
+    max-width: $container-lg;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    padding: .7rem 0;
+  }
+  .navTitle{
+    margin: 0 1rem; 
+  }
+  .navLinks{
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    li{
+      margin: 0 .5rem;
+      a{
+        text-decoration: none;
+        
+        &:hover{
+          font-weight: bold;
+        }
+        
+      }
+      
+    }
+    
+    
+  }
+}
+
+.headerContainer{
+  @include set-background($dark-color);
+  
+  
+  .headerContentContainer{
+    margin: 0 auto;
+    max-width: $container-lg;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .techMiniIcons{
+      img{
+        max-width: 4rem;
+        margin-right: .6rem;
+      }
+    }
+    .title{
+      margin-bottom: 2rem;
+      max-width: 40rem;
+    }
+    .projectLinks{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      button{
+        margin: .5rem
+      }
+    }
+  }
+}
+
+.imgGalleryContainer{
+  padding: 1rem;
+  .imgsContainer{
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: $container-lg;
+    overflow-x: scroll;
+    display: flex;
+    img{
+      margin: 0 .2rem;
+    }
+  }
+}
+
+.projectContainer{
+  
+  padding: 1rem;
+  .projectDescriptionContainer{
+    margin: 0 auto;
+    max-width: $container-lg;
+    
+    .projectSectionContainer{
+      a{
+        
+        
+        color: darken($secondary-color, 25%);
+        
+        
+       
+      }
+      
+      .titleDiv{
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        
+        .tech_icons{
+          
+          
+          img{
+            margin-right: 1rem;
+            max-width: 5.5rem;
+          }
+        }
+        h2{
+          font-size: 1.8rem;
+          margin-right: 2rem;
+        }
+      }
+      .textContentDiv{
+        padding: 0 1rem 2rem 1rem;
+        line-height: 1.8;
+        text-align:justify;
+        p{
+          text-indent: 2rem;
+        }
+      }
+    }
+  }
+}
+
+
+.footerContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include set-background($dark-color);
+  a{
+    color: $light-text;
+    text-decoration: none;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+  
+}
+
+@media (max-width: $breakpoint-sm) {
+  
+  .titleDiv{
+    flex-direction: column;
+  }
+
+  .headerContentContainer{
+display: flex;
+flex-direction: column;
+  }
+
+  .projectContainer{
+    padding: .5rem;
+    .projectDescriptionContainer{
+      .projectSectionContainer{
+        .titleDiv{
+          .tech_icons{
+            img{
+              max-width: 5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navBar{
+    .navLinks{
+      font-size: .8rem;
+    }
+    .navTitle{
+      margin: 0 .5rem;
+    }
+  }
+  
+  
+
+
+
+}

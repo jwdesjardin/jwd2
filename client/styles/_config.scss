@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap');
+
+$font-stack: 'Montserrat', sans-serif;
+$primary-color: #3659A2;
+$secondary-color: #FFD166;
+$third-color: #5FCF80;
+$fourth-color: #9B3B5A;
+
+$menu-overlay-color:   #FFD166;
+
+
+$light-color: #ebebeb;
+$dark-color: #141414;
+
+$light-text: #fff;
+$dark-text: #000;
+
+$container-lg: 70rem;
+$container-md: 40rem;
+$global-transistion: transform 50ms linear;
+$menu-transistion-speed: transform 50ms linear ;
+$breakpoint-sm: 450px;
+$breakpoint-md: 900px;
+
+// Set text color based on bg
+@function set-text-color($color) {
+  @if(lightness($color) > 70) {
+    @return $dark-text;
+  } @else {
+    @return $light-text;
+  }
+}
+
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color)
+}
+
+body{
+  box-sizing: border-box;
+
+}
+
+a{
+  text-decoration: none;
+  
+  color: $secondary-color;
+  transition: all 150ms linear; 
+  
+  &:hover{
+    text-decoration: underline;
+  }
+}

@@ -1,8 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap");
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #FFD166;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .btn, .btn-primary, .btn-secondary {
   display: inline-block;
   border-radius: 5px;
-  padding: 8px 20px;
+  padding: 1rem 2rem;
   margin: 3px;
   -webkit-transition: -webkit-transform 50ms linear;
   transition: -webkit-transform 50ms linear;
@@ -16,34 +32,92 @@
 }
 
 .btn-primary {
-  background-color: #5d90dd;
-  color: #ebebeb;
-  border: 1px solid #2967c5;
+  background-color: #5c7fc9;
+  color: #fff;
+  border: 1px solid #3659A2;
 }
 
 .btn-secondary {
-  background-color: #e0f7fe;
-  color: #141414;
-  border: 1px solid #97e3fa;
+  background-color: #ffe8b3;
+  color: #000;
+  border: 1px solid #FFD166;
 }
 
 body {
   font-family: Montserrat;
-  color: #141414;
+  color: #000;
+  background-color: #ebebeb;
+  color: #000;
 }
 
 img {
   border-radius: 7px;
 }
 
+.pageDiv {
+  padding-top: 2.5rem;
+}
+
+.navBar {
+  background-color: #141414;
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+}
+
+.navBar .navbarContentContainer {
+  margin: 0 auto;
+  max-width: 70rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .7rem 0;
+}
+
+.navBar .navTitle {
+  margin: 0 1rem;
+}
+
+.navBar .navLinks {
+  font-size: .9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+.navBar .navLinks li {
+  margin: 0 .5rem;
+}
+
+.navBar .navLinks li a {
+  text-decoration: none;
+}
+
+.navBar .navLinks li a:hover {
+  font-weight: bold;
+}
+
 .headerContainer {
-  font-size: 1.4rem;
+  background-color: #141414;
+  color: #fff;
 }
 
 .headerContainer .headerContentContainer {
   margin: 0 auto;
   max-width: 70rem;
-  padding: 4rem;
+  padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,8 +129,14 @@ img {
           justify-content: space-between;
 }
 
-.headerContainer .headerContentContainer .leftFlexItem {
-  margin-right: 2rem;
+.headerContainer .headerContentContainer .techMiniIcons img {
+  max-width: 4rem;
+  margin-right: .6rem;
+}
+
+.headerContainer .headerContentContainer .title {
+  margin-bottom: 2rem;
+  max-width: 40rem;
 }
 
 .headerContainer .headerContentContainer .projectLinks {
@@ -67,6 +147,7 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .headerContainer .headerContentContainer .projectLinks button {
@@ -74,11 +155,12 @@ img {
 }
 
 .imgGalleryContainer {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .imgGalleryContainer .imgsContainer {
   margin: 0 auto;
+  padding: 1rem;
   max-width: 70rem;
   overflow-x: scroll;
   display: -webkit-box;
@@ -87,11 +169,11 @@ img {
 }
 
 .imgGalleryContainer .imgsContainer img {
-  margin: 0 .5rem;
+  margin: 0 .2rem;
 }
 
 .projectContainer {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .projectContainer .projectDescriptionContainer {
@@ -99,8 +181,8 @@ img {
   max-width: 70rem;
 }
 
-.projectContainer .projectDescriptionContainer .projectSectionContainer {
-  padding: 1rem;
+.projectContainer .projectDescriptionContainer .projectSectionContainer a {
+  color: #e6a100;
 }
 
 .projectContainer .projectDescriptionContainer .projectSectionContainer .titleDiv {
@@ -113,8 +195,9 @@ img {
           align-items: center;
 }
 
-.projectContainer .projectDescriptionContainer .projectSectionContainer .titleDiv .tech_icons {
-  opacity: .8;
+.projectContainer .projectDescriptionContainer .projectSectionContainer .titleDiv .tech_icons img {
+  margin-right: 1rem;
+  max-width: 5.5rem;
 }
 
 .projectContainer .projectDescriptionContainer .projectSectionContainer .titleDiv h2 {
@@ -123,12 +206,36 @@ img {
 }
 
 .projectContainer .projectDescriptionContainer .projectSectionContainer .textContentDiv {
-  padding: 1.5rem;
+  padding: 0 1rem 2rem 1rem;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .projectContainer .projectDescriptionContainer .projectSectionContainer .textContentDiv p {
   text-indent: 2rem;
+}
+
+.footerContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #141414;
+  color: #fff;
+}
+
+.footerContainer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footerContainer a:hover {
+  font-weight: bold;
 }
 
 @media (max-width: 450px) {
@@ -149,6 +256,15 @@ img {
   }
   .projectContainer {
     padding: .5rem;
+  }
+  .projectContainer .projectDescriptionContainer .projectSectionContainer .titleDiv .tech_icons img {
+    max-width: 5rem;
+  }
+  .navBar .navLinks {
+    font-size: .8rem;
+  }
+  .navBar .navTitle {
+    margin: 0 .5rem;
   }
 }
 /*# sourceMappingURL=projects.css.map */

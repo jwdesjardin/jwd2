@@ -1,5 +1,7 @@
 import { getAllProjectIds, getProjectData } from '../../lib/projects';
+import { Fragment } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 //sets props in Post Component - gets params from fileName
 export async function getStaticProps({ params }) {
@@ -24,18 +26,37 @@ export async function getStaticPaths() {
 export default function Post({ project }) {
 	console.log(project);
 	return (
-		<div>
+		<div className='pageDiv'>
 			<Head>
 				<title>Joey Desjardin Portfolio | {project.title}</title>
-				<link rel='stylesheet' href='/projects.css' />
 			</Head>
+
+			<nav className='navBar'>
+				<div className='navbarContentContainer'>
+					<h1 className='navTitle'>JWD2</h1>
+					<ul className='navLinks'>
+						<li>
+							<Link href='/#'>Home</Link>
+						</li>
+						<li>
+							<Link href='/#featured-projects'>Projects</Link>
+						</li>
+						<li>
+							<Link href='/resume'>Resume</Link>
+						</li>
+						<li>
+							<Link href='/#contact-links'>Contact</Link>
+						</li>
+					</ul>
+				</div>
+			</nav>
 
 			<header>
 				<div className='headerContainer'>
 					<div className='headerContentContainer'>
-						<div className='leftFlexItem'>
+						<div className='title'>
 							<h1>{project.title}</h1>
-							<div className='tech_mini-icons'>
+							<div className='techMiniIcons'>
 								{project.categories.length > 0 &&
 									project.categories.map(category => {
 										if (category.mainIcon) {
@@ -49,6 +70,7 @@ export default function Post({ project }) {
 									})}
 							</div>
 						</div>
+
 						<div className='projectLinks'>
 							<a href={project.githubLink} target='_blank'>
 								<button className='btn btn-primary'>Github Page</button>
@@ -60,6 +82,7 @@ export default function Post({ project }) {
 					</div>
 				</div>
 			</header>
+
 			<div className='imgGalleryContainer'>
 				<div className='imgsContainer'>
 					{project.images.length > 0 &&
@@ -83,7 +106,12 @@ export default function Post({ project }) {
 								{project.sectionIcons1 &&
 									project.sectionIcons1.map(item => {
 										if (item.mainIcon) {
-											return <img src={item.mainIcon.asset.url} />;
+											return (
+												<img
+													key={item.mainIcon.asset._id}
+													src={item.mainIcon.asset.url}
+												/>
+											);
 										}
 									})}
 							</div>
@@ -91,7 +119,32 @@ export default function Post({ project }) {
 
 						<div className='textContentDiv'>
 							{project.body1 &&
-								project.body1.map(body => <p>{body.children[0].text}</p>)}
+								project.body1.length > 0 &&
+								project.body1.map(node => (
+									<p key={node._key}>
+										{node.children.length > 0 &&
+											node.children.map(text => (
+												<span key={text._key}>
+													{text.marks.length > 0 ? (
+														<a
+															href={
+																node.markDefs.filter(
+																	markDef =>
+																		markDef._key ===
+																		text.marks[0]
+																)[0].href
+															}
+															target='_blank'
+														>
+															{text.text}
+														</a>
+													) : (
+														<Fragment>{text.text}</Fragment>
+													)}
+												</span>
+											))}
+									</p>
+								))}
 						</div>
 					</div>
 
@@ -111,7 +164,32 @@ export default function Post({ project }) {
 
 							<div className='textContentDiv'>
 								{project.body2 &&
-									project.body2.map(body => <p>{body.children[0].text}</p>)}
+									project.body2.length > 0 &&
+									project.body2.map(node => (
+										<p key={node._key}>
+											{node.children.length > 0 &&
+												node.children.map(text => (
+													<span key={text._key}>
+														{text.marks.length > 0 ? (
+															<a
+																href={
+																	node.markDefs.filter(
+																		markDef =>
+																			markDef._key ===
+																			text.marks[0]
+																	)[0].href
+																}
+																target='_blank'
+															>
+																{text.text}
+															</a>
+														) : (
+															<Fragment>{text.text}</Fragment>
+														)}
+													</span>
+												))}
+										</p>
+									))}
 							</div>
 						</div>
 					)}
@@ -132,7 +210,32 @@ export default function Post({ project }) {
 
 							<div className='textContentDiv'>
 								{project.body3 &&
-									project.body3.map(body => <p>{body.children[0].text}</p>)}
+									project.body3.length > 0 &&
+									project.body3.map(node => (
+										<p key={node._key}>
+											{node.children.length > 0 &&
+												node.children.map(text => (
+													<span key={text._key}>
+														{text.marks && text.marks.length > 0 ? (
+															<a
+																href={
+																	node.markDefs.filter(
+																		markDef =>
+																			markDef._key ===
+																			text.marks[0]
+																	)[0].href
+																}
+																target='_blank'
+															>
+																{text.text}
+															</a>
+														) : (
+															<Fragment>{text.text}</Fragment>
+														)}
+													</span>
+												))}
+										</p>
+									))}
 							</div>
 						</div>
 					)}
@@ -153,7 +256,32 @@ export default function Post({ project }) {
 
 							<div className='textContentDiv'>
 								{project.body4 &&
-									project.body4.map(body => <p>{body.children[0].text}</p>)}
+									project.body4.length > 0 &&
+									project.body4.map(node => (
+										<p key={node._key}>
+											{node.children.length > 0 &&
+												node.children.map(text => (
+													<span key={text._key}>
+														{text.marks.length > 0 ? (
+															<a
+																href={
+																	node.markDefs.filter(
+																		markDef =>
+																			markDef._key ===
+																			text.marks[0]
+																	)[0].href
+																}
+																target='_blank'
+															>
+																{text.text}
+															</a>
+														) : (
+															<Fragment>{text.text}</Fragment>
+														)}
+													</span>
+												))}
+										</p>
+									))}
 							</div>
 						</div>
 					)}

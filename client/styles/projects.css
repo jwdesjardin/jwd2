@@ -15,7 +15,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.btn, .btn-primary, .btn-secondary {
+.btn, .btn-primary, .btn-secondary, .btn-secondary-disabled {
   display: inline-block;
   border-radius: 5px;
   padding: 1rem 2rem;
@@ -26,7 +26,7 @@ a:hover {
   transition: transform 50ms linear, -webkit-transform 50ms linear;
 }
 
-.btn:hover, .btn-primary:hover, .btn-secondary:hover {
+.btn:hover, .btn-primary:hover, .btn-secondary:hover, .btn-secondary-disabled:hover {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }
@@ -38,9 +38,20 @@ a:hover {
 }
 
 .btn-secondary {
-  background-color: #ffe8b3;
+  background-color: #ffd980;
   color: #000;
   border: 1px solid #FFD166;
+}
+
+.btn-secondary-disabled {
+  background-color: #805900;
+  color: #fff;
+  border: 1px solid #FFD166;
+}
+
+.btn-secondary-disabled:hover {
+  -webkit-transform: none;
+          transform: none;
 }
 
 body {
@@ -138,23 +149,72 @@ img {
   display: flex;
 }
 
+.imageModalContainer .modalContent i {
+  -webkit-transition: 150ms linear all;
+  transition: 150ms linear all;
+}
+
+.imageModalContainer .modalContent i:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.imageModalContainer .modalContent .left-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  margin: 1rem;
+}
+
+.imageModalContainer .modalContent .right-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  margin: 1rem;
+}
+
 .imageModalContainer .modalContent .modalCloseButton {
   color: #fff;
   margin-left: .5rem;
 }
 
-.imageModalContainer .modalContent .modalCloseButton i {
-  -webkit-transition: 150ms linear all;
-  transition: 150ms linear all;
-}
-
-.imageModalContainer .modalContent .modalCloseButton i:hover {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
-
 .imageModalContainer .modalContent .modalImage {
   max-width: 55rem;
+}
+
+@media (max-width: 700px) {
+  .imageModalContainer .modalContent {
+    max-width: 370px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .imageModalContainer .modalContent .left-arrow {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .imageModalContainer .modalContent .right-arrow {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .imageModalContainer .modalContent .modalCloseButton {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .imageModalContainer .modalContent .modalImage {
+    max-width: 25rem;
+  }
 }
 
 .headerContainer {
@@ -323,6 +383,93 @@ img {
   }
   .navBar .navTitle {
     margin: 0 .5rem;
+  }
+}
+
+@media (max-width: 1390px) {
+  .featuredProjectsContainer .projectsContainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .aboutMeContainer .aboutMeText p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+  }
+  .featuredProjectsContainer .projectCard {
+    padding: 1rem;
+    margin: .5rem;
+  }
+  .grid-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .split {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .textAlign {
+    text-align: center;
+    padding: .5rem;
+  }
+  .landingContainer {
+    margin-top: 1.5rem;
+  }
+  .landingContainer .landingHeaderText {
+    font-size: 3rem;
+    word-spacing: 0rem;
+  }
+  .halfImg {
+    width: 100%;
+  }
+  .treehouseContainer .certificateContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .treehouseContainer .certificateContainer a img {
+    max-width: 15rem;
+  }
+  .treehouseContainer .treehouseLogo {
+    max-width: 6rem;
+  }
+  .treehouseContainer .treehouseProjectsContainer {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .treehouseProjects {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .featuredProjectsContainer .projectsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 /*# sourceMappingURL=projects.css.map */

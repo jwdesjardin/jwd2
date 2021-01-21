@@ -25,23 +25,46 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ project }) {
-	const [ showModal, setShowModal ] = useState(null);
+	const [ showModal, setShowModal ] = useState(-1);
 
 	const openImageModal = e => {
 		console.log(e.currentTarget.value);
-		const imageId = e.currentTarget.value;
+		const imageId = parseInt(e.currentTarget.value);
 		setShowModal(imageId);
 		console.log('show modal', imageId);
 	};
 
 	const closeModal = e => {
+		setShowModal(-1);
+	};
+
+	const closeUnfocus = e => {
 		console.log(e.target.className);
-		if (!(e.target.className == 'modalImage')) {
-			setShowModal(null);
+		if (e.target.className === 'imageModalContainer') {
+			setShowModal(-1);
 		}
 	};
 
-	console.log(project);
+	const moveLeft = e => {
+		setShowModal(prevState => {
+			if (prevState >= 0) {
+				return prevState - 1;
+			}
+		});
+	};
+
+	const moveRight = e => {
+		setShowModal(prevState => {
+			console.log(prevState, project.images.length - 1);
+			if (prevState < project.images.length - 1) {
+				return prevState + 1;
+			} else if (prevState === project.images.length - 1) {
+				return -1;
+			}
+		});
+	};
+
+	console.log(project, showModal);
 	return (
 		<div className='pageDiv'>
 			<Head>
@@ -98,9 +121,15 @@ export default function Post({ project }) {
 							<a href={project.githubLink} target='_blank'>
 								<button className='btn btn-primary'>Github Page</button>
 							</a>
-							<a href={project.liveLink} target='_blank'>
-								<button className='btn btn-secondary'>Live Project</button>
-							</a>
+							{project.slug.current !== 'portfolio-project-jwd2' ? (
+								<a href={project.liveLink} target='_blank'>
+									<button className='btn btn-secondary'>Live Project</button>
+								</a>
+							) : (
+								<button disabled className='btn btn-secondary-disabled'>
+									You are Here
+								</button>
+							)}
 						</div>
 					</div>
 				</div>
@@ -122,16 +151,23 @@ export default function Post({ project }) {
 				</div>
 			</div>
 
-			{showModal && (
-				<div id='imageModal' className='imageModalContainer' onClick={closeModal}>
+			{showModal > -1 && (
+				<div id='imageModal' className='imageModalContainer' onClick={closeUnfocus}>
 					<div className='modalContent'>
+						<div className='modalCloseButton' onClick={closeModal}>
+							<i className='fas fa-window-close fa-2x' />
+						</div>
+						<div className='left-arrow' onClick={moveLeft}>
+							<i className='fas fa-chevron-circle-left fa-2x' />
+						</div>
+
 						<img
 							className='modalImage'
 							src={project.images[showModal].asset.url}
 							alt=''
 						/>
-						<div className='modalCloseButton' onClick={closeModal}>
-							<i className='fas fa-window-close fa-2x' />
+						<div className='right-arrow' onClick={moveRight}>
+							<i className='fas fa-chevron-circle-right fa-2x' />
 						</div>
 					</div>
 				</div>

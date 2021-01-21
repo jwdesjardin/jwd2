@@ -19,8 +19,16 @@
 }
 .btn-secondary{
   @extend .btn;
-  @include set-background(lighten($secondary-color, 15%));
+  @include set-background(lighten($secondary-color, 5%));
   border: 1px solid $secondary-color;
+}
+.btn-secondary-disabled{
+  @extend .btn;
+  @include set-background(darken($secondary-color, 45%));
+  border: 1px solid $secondary-color;
+  &:hover{
+    transform: none;
+  }
 }
 body{
   font-family: Montserrat;
@@ -95,15 +103,29 @@ img{
   align-items: center;
   .modalContent{
     display: flex;
+    i{
+      transition: 150ms linear all ;
+    &:hover{
+      transform: scale(.9);
+    }
+    }
+    .left-arrow{
+      display: flex;
+      align-items: center;
+      color: $light-text;
+      margin: 1rem;
+    }
+    .right-arrow{
+      display: flex;
+      align-items: center;
+      color: $light-text;
+      margin: 1rem;
+      
+    }
     .modalCloseButton{
       color: $light-text;
       margin-left: .5rem;
-      i{
-        transition: 150ms linear all ;
-      &:hover{
-        transform: scale(.9);
-      }
-      }
+      
       
     }
     .modalImage{
@@ -121,8 +143,19 @@ img{
 @media (max-width: 700px) {
   .imageModalContainer{
   .modalContent{
+    max-width: 370px;
+    flex-direction: column;
+    .left-arrow{
+      align-self: center;
+    }
+    .right-arrow{
+      align-self: center;
+    }
+    .modalCloseButton{
+      align-self: flex-end;
+    }
     .modalImage{
-      max-width: 31rem;
+      max-width: 25rem;
     }
   }   
 }

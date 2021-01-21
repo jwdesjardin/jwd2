@@ -499,8 +499,5 @@ a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .imageModalContainer .modalContent .modalImage {
-    max-width: 31rem;
-  }
 }
 /*# sourceMappingURL=styles.css.map */

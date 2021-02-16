@@ -432,6 +432,7 @@ img {
   }
   .landingContainer {
     margin-top: 1.5rem;
+    padding: 1rem;
   }
   .landingContainer .landingHeaderText {
     font-size: 3rem;

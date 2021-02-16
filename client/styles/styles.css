@@ -156,8 +156,8 @@ a:hover {
 .landingContainer .landingHeaderText {
   font-size: 6rem;
   line-height: 1;
-  letter-spacing: 0rem;
-  word-spacing: -1rem;
+  letter-spacing: .1rem;
+  word-spacing: -.5rem;
   text-shadow: 2px 2px 4px rgba(235, 235, 235, 0.3);
 }
 
@@ -460,6 +460,7 @@ a:hover {
   }
   .landingContainer {
     margin-top: 1.5rem;
+    padding: 1rem;
   }
   .landingContainer .landingHeaderText {
     font-size: 3rem;

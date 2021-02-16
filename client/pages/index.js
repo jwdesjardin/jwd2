@@ -70,13 +70,15 @@ export default function Home() {
 					<div className='contentContainer'>
 						<div className='headerTextContent'>
 							<h1 className='landingHeaderText'>
-								My Name is Joey Desjardin. I am a Web Developer.{' '}
+								My Name is Joey Desjardin. <br />I am a Software Developer.{' '}
 							</h1>
 							<p>
 								I am a curious developer eager to pick up new skills. I am looking
 								for team to contribute to and learn with.
 							</p>
-							<button className='btn btn-primary'>Email Me</button>
+							<a href='mailto:jwdesjardin@gmail.com'>
+								<button className='btn btn-primary'>Email Me</button>
+							</a>
 						</div>
 					</div>
 				</section>
